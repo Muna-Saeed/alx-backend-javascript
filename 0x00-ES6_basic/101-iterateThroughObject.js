@@ -1,10 +1,12 @@
 export default function iterateThroughObject(reportWithIterator) {
-  const employees = [];
+  let result = '';
 
-  // eslint-disable-next-line no-restricted-syntax
-  for (const employee of reportWithIterator) {
-    employees.push(employee);
+  for (const item of reportWithIterator) {
+    result += `${item} | `;
   }
 
-  return employees.join(' | ');
+  // Remove the trailing ' | ' characters
+  result = result.slice(0, -3);
+
+  return result;
 }
