@@ -12,9 +12,9 @@ class HolbertonCourse {
     }
 
     // Store each attribute in underscore attribute version
-    this._name = name;
-    this._length = length;
-    this._students = students;
+    this.name = name;
+    this.length = length;
+    this.students = students;
   }
 
   // Implement getter and setter for the name attribute
