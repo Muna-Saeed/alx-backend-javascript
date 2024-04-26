@@ -1,6 +1,6 @@
 class Building {
   constructor(sqft) {
-    if (new.target === Building) {
+    if (new.target !== Building) {
       throw new TypeError("Abstract class 'Building' cannot be instantiated directly.");
     }
     this._sqft = sqft;
