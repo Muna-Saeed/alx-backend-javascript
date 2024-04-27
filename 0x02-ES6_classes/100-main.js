@@ -1,22 +1,7 @@
-const CLONE_CAR = Symbol("cloneCar");
+import EVCar from './100-evcar.js';
 
-class Car {
-  constructor(brand, motor, color) {
-    this._brand = brand;
-    this._motor = motor;
-    this._color = color;
-  }
+const ec1 = new EVCar("Tesla", "Turbo", "Red", "250");
+console.log(ec1);
 
-  [CLONE_CAR]() {
-    const { constructor, ...properties } = Object.getOwnPropertyDescriptors(this);
-    const clonedCar = Object.create(Object.getPrototypeOf(this), properties);
-    clonedCar.constructor = constructor;
-    return clonedCar;
-  }
-
-  cloneCar() {
-    return this[CLONE_CAR]();
-  }
-}
-
-export default Car;
+const ec2 = ec1.cloneCar();
+console.log(ec2);
