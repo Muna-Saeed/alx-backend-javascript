@@ -1,25 +1,21 @@
-const cloneKey = Symbol('cloneKey');
+const CLONE_CAR = Symbol("cloneCar");
 
 class Car {
   constructor(brand, motor, color) {
     this._brand = brand;
     this._motor = motor;
     this._color = color;
-
-    // Define the cloneCar method using a symbol
-    this[cloneKey] = function() {
-      return new this.constructor(this._brand, this._motor, this._color);
-    };
   }
 
-  // Define the cloneCar method
+  [CLONE_CAR]() {
+    const { constructor, ...properties } = Object.getOwnPropertyDescriptors(this);
+    const clonedCar = Object.create(Object.getPrototypeOf(this), properties);
+    clonedCar.constructor = constructor;
+    return clonedCar;
+  }
+
   cloneCar() {
-    const Species = this.constructor[Symbol.species];
-    if (Species) {
-      return new Species(this._brand, this._motor, this._color);
-    } else {
-      return this[cloneKey]();
-    }
+    return this[CLONE_CAR]();
   }
 }
 

@@ -8,13 +8,18 @@ class Car {
 
     // Define the cloneCar method using a symbol
     this[cloneKey] = function() {
-      return new Car(this._brand, this._motor, this._color);
+      return new this.constructor(this._brand, this._motor, this._color);
     };
   }
 
   // Define the cloneCar method
   cloneCar() {
-    return this[cloneKey]();
+    const Species = this.constructor[Symbol.species];
+    if (Species) {
+      return new Species(this._brand, this._motor, this._color);
+    } else {
+      return this[cloneKey]();
+    }
   }
 }
 
