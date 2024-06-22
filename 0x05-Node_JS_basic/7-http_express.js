@@ -1,7 +1,6 @@
-// more complex HTTP server using Express
+// // more complex HTTP server using Express
 const express = require('express');
 const fs = require('fs');
-const path = require('path');
 
 const app = express();
 const port = 1245;
@@ -14,12 +13,12 @@ const countStudents = (database) => {
         return;
       }
 
-      const lines = data.trim().split('\n').filter(line => line !== '');
+      const lines = data.trim().split('\n').filter((line) => line !== '');
       const students = lines.slice(1);
       const fields = {};
 
-      students.forEach(student => {
-        const [firstname, lastname, age, field] = student.split(',');
+      students.forEach((student) => {
+        const [firstname, , , field] = student.split(',');
         if (!fields[field]) fields[field] = [];
         fields[field].push(firstname);
       });
@@ -48,7 +47,7 @@ app.get('/students', (req, res) => {
         }
       }
 
-      responseText = `Number of students: ${totalStudents}\n` + responseText;
+      responseText = `Number of students: ${totalStudents}\n${responseText}`;
       res.send(responseText.trim());
     })
     .catch((err) => {
