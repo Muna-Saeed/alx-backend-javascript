@@ -20,6 +20,7 @@ const app = http.createServer((req, res) => {
         res.end();
       })
       .catch((err) => {
+        res.statusCode = 500;
         res.write(err.message);
         res.end();
       });
