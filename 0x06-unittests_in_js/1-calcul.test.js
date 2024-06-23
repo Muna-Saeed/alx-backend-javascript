@@ -1,10 +1,17 @@
 const assert = require('assert');
 const calculateNumber = require('./1-calcul');
 
+<<<<<<< HEAD
 describe('calculateNumber', () => {
   describe('type == "SUM"', () => {
     it('equal positive numbers', () => {
       assert.strictEqual(calculateNumber('SUM', 2.0, 2.0), 4);
+=======
+describe('calculateNumber', function() {
+  describe('type == "SUM"', function() {
+    it('should return 6 when inputs are 1.4 and 4.5', function() {
+      assert.strictEqual(calculateNumber('SUM', 1.4, 4.5), 6);
+>>>>>>> 3df88f577109873a6cfab6ad1c540044859a998a
     });
 
     it('equal positive numbers (alternate)', () => {
@@ -32,6 +39,7 @@ describe('calculateNumber', () => {
     });
   });
 
+<<<<<<< HEAD
   describe('type == "SUBTRACT"', () => {
     it('equal positive numbers', () => {
       assert.strictEqual(calculateNumber('SUBTRACT', 2.0, 2.0), 0);
@@ -39,6 +47,11 @@ describe('calculateNumber', () => {
 
     it('equal positive numbers (alternate)', () => {
       assert.strictEqual(calculateNumber('SUBTRACT', 2.3, 1.8), 0);
+=======
+  describe('type == "SUBTRACT"', function() {
+    it('should return -4 when inputs are 1.4 and 4.5', function() {
+      assert.strictEqual(calculateNumber('SUBTRACT', 1.4, 4.5), -4);
+>>>>>>> 3df88f577109873a6cfab6ad1c540044859a998a
     });
 
     it('equal negative numbers', () => {
@@ -62,6 +75,7 @@ describe('calculateNumber', () => {
     });
   });
 
+<<<<<<< HEAD
   describe('type == "DIVIDE"', () => {
     it('positive numbers', () => {
       assert.strictEqual(calculateNumber('DIVIDE', 8.0, 2.0), 4.0);
@@ -121,6 +135,11 @@ describe('calculateNumber', () => {
 
     it('negative number and number rounded down to zero', () => {
       assert.strictEqual(calculateNumber('DIVIDE', -5.0, 0.2), 'Error');
+=======
+  describe('type == "DIVIDE"', function() {
+    it('should return 0.2 when inputs are 1.4 and 4.5', function() {
+      assert.strictEqual(calculateNumber('DIVIDE', 1.4, 4.5), 0.2);
+>>>>>>> 3df88f577109873a6cfab6ad1c540044859a998a
     });
 
     it('negative number and number rounded up to zero', () => {
