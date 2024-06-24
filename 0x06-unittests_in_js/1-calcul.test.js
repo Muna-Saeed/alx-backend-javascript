@@ -1,38 +1,134 @@
 const assert = require('assert');
-const calculateNumber = require('./1-calcul.js');
+const calculateNumber = require('./1-calcul');
 
 describe('calculateNumber', () => {
-  describe(' == "SUM"', () => {
-    it('should return 6 when inputs are 1.4 and 4.5', () => {
-      assert.strictEqual(calculateNumber('SUM', 1.4, 4.5), 6);
+  describe('SUM operations', () => {
+    it('should return 4 for inputs 2.0 and 2.0', () => {
+      assert.strictEqual(calculateNumber('SUM', 2.0, 2.0), 4);
     });
 
-    it('should return 0 when inputs are -1.4 and 1.3', () => {
-      assert.strictEqual(calculateNumber('SUM', -1.4, 1.3), 0);
+    it('should return 4 for inputs 2.3 and 1.8', () => {
+      assert.strictEqual(calculateNumber('SUM', 2.3, 1.8), 4);
+    });
+
+    it('should return -4 for inputs -2.0 and -2.0', () => {
+      assert.strictEqual(calculateNumber('SUM', -2.0, -2.0), -4);
+    });
+
+    it('should return -4 for inputs -2.3 and -1.8', () => {
+      assert.strictEqual(calculateNumber('SUM', -2.3, -1.8), -4);
+    });
+
+    it('should return 0 for inputs -2.0 and 2.0', () => {
+      assert.strictEqual(calculateNumber('SUM', -2.0, 2.0), 0);
+    });
+
+    it('should return 0 for inputs 2.0 and -2.0', () => {
+      assert.strictEqual(calculateNumber('SUM', 2.0, -2.0), 0);
+    });
+
+    it('should return 0 for inputs 0.0 and 0.0', () => {
+      assert.strictEqual(calculateNumber('SUM', 0.0, 0.0), 0);
     });
   });
 
-  describe('SUBTRACT', function() {
-    it('should return -4 when inputs are 1.4 and 4.5', function() => {
-      assert.strictEqual(calculateNumber('SUBTRACT', 1.4, 4.5), -4);
+  describe('SUBTRACT operations', () => {
+    it('should return 0 for inputs 2.0 and 2.0', () => {
+      assert.strictEqual(calculateNumber('SUBTRACT', 2.0, 2.0), 0);
     });
 
-    it('should return -2 when inputs are -1.4 and 0.3', function() => {
-      assert.strictEqual(calculateNumber('SUBTRACT', -1.4, 0.3), -2);
+    it('should return 0 for inputs 2.3 and 1.8', () => {
+      assert.strictEqual(calculateNumber('SUBTRACT', 2.3, 1.8), 0);
+    });
+
+    it('should return 0 for inputs -2.0 and -2.0', () => {
+      assert.strictEqual(calculateNumber('SUBTRACT', -2.0, -2.0), 0);
+    });
+
+    it('should return 0 for inputs -2.3 and -1.8', () => {
+      assert.strictEqual(calculateNumber('SUBTRACT', -2.3, -1.8), 0);
+    });
+
+    it('should return -4 for inputs -2.0 and 2.0', () => {
+      assert.strictEqual(calculateNumber('SUBTRACT', -2.0, 2.0), -4);
+    });
+
+    it('should return 4 for inputs 2.0 and -2.0', () => {
+      assert.strictEqual(calculateNumber('SUBTRACT', 2.0, -2.0), 4);
+    });
+
+    it('should return 0 for inputs 0.0 and 0.0', () => {
+      assert.strictEqual(calculateNumber('SUBTRACT', 0.0, 0.0), 0);
     });
   });
 
-  describe('DIVIDE', function() => {
-    it('should return 0.2 when inputs are 1.4 and 4.5', function() => {
-      assert.strictEqual(calculateNumber('DIVIDE', 1.4, 4.5), 0.2);
+  describe('DIVIDE operations', () => {
+    it('should return 4 for inputs 8.0 and 2.0', () => {
+      assert.strictEqual(calculateNumber('DIVIDE', 8.0, 2.0), 4);
     });
 
-    it('should return "Error" when inputs are 1.4 and 0', function() => {
-      assert.strictEqual(calculateNumber('DIVIDE', 1.4, 0), 'Error');
+    it('should return -3.5 for inputs -7.0 and 2.0', () => {
+      assert.strictEqual(calculateNumber('DIVIDE', -7.0, 2.0), -3.5);
     });
 
-    it('should return "Error" when inputs are 1.4 and 0.4', function() => {
-      assert.strictEqual(calculateNumber('DIVIDE', 1.4, 0.4), 'Error');
+    it('should return -3.5 for inputs 7.0 and -2.0', () => {
+      assert.strictEqual(calculateNumber('DIVIDE', 7.0, -2.0), -3.5);
+    });
+
+    it('should return 3.5 for inputs -7.0 and -2.0', () => {
+      assert.strictEqual(calculateNumber('DIVIDE', -7.0, -2.0), 3.5);
+    });
+
+    it('should return 1 for inputs 2.0 and 2.0', () => {
+      assert.strictEqual(calculateNumber('DIVIDE', 2.0, 2.0), 1);
+    });
+
+    it('should return 1 for inputs -2.0 and -2.0', () => {
+      assert.strictEqual(calculateNumber('DIVIDE', -2.0, -2.0), 1);
+    });
+
+    it('should return 1 for inputs 2.6 and 3.0', () => {
+      assert.strictEqual(calculateNumber('DIVIDE', 2.6, 3.0), 1);
+    });
+
+    it('should return 1 for inputs 2.4 and 2.0', () => {
+      assert.strictEqual(calculateNumber('DIVIDE', 2.4, 2.0), 1);
+    });
+
+    it('should return 0 for inputs 0.0 and 5.0', () => {
+      assert.strictEqual(calculateNumber('DIVIDE', 0.0, 5.0), 0);
+    });
+
+    it('should return 0 for inputs 0.0 and -5.0', () => {
+      assert.strictEqual(calculateNumber('DIVIDE', 0.0, -5.0), 0);
+    });
+
+    it('should return "Error" for inputs 5.0 and 0', () => {
+      assert.strictEqual(calculateNumber('DIVIDE', 5.0, 0), 'Error');
+    });
+
+    it('should return "Error" for inputs 5.0 and 0.2', () => {
+      assert.strictEqual(calculateNumber('DIVIDE', 5.0, 0.2), 'Error');
+    });
+
+    it('should return "Error" for inputs 5.0 and -0.2', () => {
+      assert.strictEqual(calculateNumber('DIVIDE', 5.0, -0.2), 'Error');
+    });
+
+    it('should return "Error" for inputs -5.0 and 0', () => {
+      assert.strictEqual(calculateNumber('DIVIDE', -5.0, 0), 'Error');
+    });
+
+    it('should return "Error" for inputs -5.0 and 0.2', () => {
+      assert.strictEqual(calculateNumber('DIVIDE', -5.0, 0.2), 'Error');
+    });
+
+    it('should return "Error" for inputs -5.0 and -0.2', () => {
+      assert.strictEqual(calculateNumber('DIVIDE', -5.0, -0.2), 'Error');
+    });
+
+    it('should return "Error" for inputs 0.0 and 0.0', () => {
+      assert.strictEqual(calculateNumber('DIVIDE', 0.0, 0.0), 'Error');
     });
   });
 });
