@@ -1,13 +1,13 @@
 const assert = require('assert');
 const calculateNumber = require('./1-calcul.js');
 
-describe('calculateNumber', function() => {
-  describe(' == "SUM"', function() => {
-    it('should return 6 when inputs are 1.4 and 4.5', function() => {
+describe('calculateNumber', () => {
+  describe(' == "SUM"', () => {
+    it('should return 6 when inputs are 1.4 and 4.5', () => {
       assert.strictEqual(calculateNumber('SUM', 1.4, 4.5), 6);
     });
 
-    it('should return 0 when inputs are -1.4 and 1.3', function() => {
+    it('should return 0 when inputs are -1.4 and 1.3', () => {
       assert.strictEqual(calculateNumber('SUM', -1.4, 1.3), 0);
     });
   });
