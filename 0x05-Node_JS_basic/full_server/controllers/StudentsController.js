@@ -9,7 +9,7 @@ class StudentsController {
       let responseText = 'This is the list of our students\n';
       let totalStudents = 0;
 
-      Object.keys(fields).sort((a, b) => a.localeCompare(b, 'en', { sensitivity: 'base' })).forEach(field => {
+      Object.keys(fields).sort((a, b) => a.localeCompare(b, 'en', { sensitivity: 'base' })).forEach((field) => {
         const students = fields[field];
         totalStudents += students.length;
         responseText += `Number of students in ${field}: ${students.length}. List: ${students.join(', ')}\n`;
