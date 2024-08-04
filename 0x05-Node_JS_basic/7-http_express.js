@@ -5,7 +5,7 @@ const fs = require('fs');
 const app = express();
 const port = 1245;
 
-const countStudents = (database) => {
+const countStudents = database => {
   return new Promise((resolve, reject) => {
     fs.readFile(database, 'utf8', (err, data) => {
       if (err) {
