@@ -13,7 +13,7 @@ const countStudents = (database) => {
         return;
       }
 
-      const lines = data.trim().split('\n').filter((line) => line !== '');
+      const lines = data.trim().split('\n').filter(line => line !== '');
       const students = lines.slice(1);
       const fields = {};
 
