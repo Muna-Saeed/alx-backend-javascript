@@ -9,7 +9,7 @@ const readDatabase = filePath => {
         return;
       }
 
-      const lines = data.trim().split('\n').filter(line => line.trim() !== '');
+      const lines = data.trim().split('\n').filter((line) => line.trim() !== '');
       const fields = {};
 
       lines.slice(1).forEach(line => {
