@@ -1,7 +1,5 @@
 # 0x04. Typescript
-Sure, here's a README.md template for your TypeScript project:
 
-```markdown
 # TypeScript Project
 
 This repository contains TypeScript code for various exercises and tasks related to TypeScript.
