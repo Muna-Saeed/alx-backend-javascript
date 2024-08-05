@@ -1,7 +1,5 @@
 # 0x05-Node_JS_basic
 
-# 0x05. NodeJS Basics
-
 ## Back-end | JavaScript | ES6 | NodeJS | ExpressJS
 **Weight:** 1  
 **Project Duration:** Jun 18, 2024, 6:00 AM to Jun 19, 2024, 6:00 AM  
@@ -388,4 +386,3 @@ If you want to add a test to validate your integration, you will need to add thi
 - GitHub repository: `alx-backend-javascript`
 - Directory: `0x05-Node_JS_basic`
 - File: `full_server/utils.js`, `full_server/controllers/AppController.js`, `full_server/controllers/StudentsController.js`, `full_server/routes/index.js`, `full_server/server.js`
-```
