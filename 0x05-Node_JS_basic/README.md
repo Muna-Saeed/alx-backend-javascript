@@ -3,10 +3,6 @@
 ## Back-end | JavaScript | ES6 | NodeJS | ExpressJS
 **Weight:** 1  
 **Project Duration:** Jun 18, 2024, 6:00 AM to Jun 19, 2024, 6:00 AM  
-**Auto QA Review:** 13.1/32 mandatory  
-**Altogether:** 40.94%  
-**Mandatory:** 40.94%  
-**Optional:** No optional tasks  
 
 ## Resources
 - Node JS getting started
